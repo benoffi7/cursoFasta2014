@@ -7,10 +7,13 @@
     android:orientation="vertical"
     android:padding="10dp" >
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/selector" />
+        android:background="@drawable/selector"
+        android:padding="10dp"
+        android:text="Soy un boton!"
+        android:textColor="@color/negro" />
 
 </LinearLayout>
