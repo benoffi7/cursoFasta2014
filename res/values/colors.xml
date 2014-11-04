@@ -3,7 +3,6 @@
 
     <color name="header">#58567D</color>
     <color name="fondo">#3366CC</color>
-    <color name="azul">#006699</color>
     <color name="celeste">#0099CC</color>
     <color name="texto_tab_non_focus">#385487</color>
     <color name="blanco">#ffffff</color>
@@ -15,7 +14,6 @@
     <color name="verde">#43BD31</color>
     <color name="rojo">#FF1d25</color>
     <color name="gris_us">#4D4D4D</color>
-    <color name="azul_us">#3fa9f5</color>
     <color name="verde_us">#7ac943</color>
     <color name="gris_oscuro">#202020</color>
     <color name="celeste_us">#84CCFF</color>

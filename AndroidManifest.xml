@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.example.cursoandroidfasta.activity_empty"
+            android:name="com.example.cursoandroidfasta.ac_main"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>

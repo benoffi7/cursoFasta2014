@@ -33,5 +33,8 @@
     <string name="guardar">Guardar</string>
     <string name="equipo">Equipo</string>
     <string name="librosdb">librosDB</string>
+    <string name="dadad">asdasdasd</string>
+    <color name="azul_us">#3fa9f5</color>
+    
 
 </resources>
