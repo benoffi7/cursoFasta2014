@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.example.cursoandroidfasta.ac_main"
+            android:name="com.example.cursoandroidfasta.clase3.lay_login"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -20,6 +20,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        
+         <activity
+            android:name="com.example.cursoandroidfasta.clase3.lay_login_correcto"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+          
         </activity>
     </application>
 
