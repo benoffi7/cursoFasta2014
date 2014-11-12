@@ -1,7 +1,5 @@
 package com.example.cursoandroidfasta.clase3;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,17 +11,16 @@ import android.widget.Toast;
 
 import com.example.cursoandroidfasta.R;
 
+
 public class lay_login extends Activity
 {
 	EditText edit_user;
 	EditText edit_pass;
+	
 	Button button_login;
 
 	String TAG = "Ciclodevida";
 	String password = "velez";
-
-	ArrayList<String> usuarios = new ArrayList<String>();
-	ArrayList<String> passwords = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -34,16 +31,29 @@ public class lay_login extends Activity
 		levantarXML();
 		asignarEventos();
 	}
+	
+	
 
 	@Override
 	protected void onResume()
 	{
-		edit_user.setText("");
-		edit_pass.setText("");
+		if (app.segundavez)
+		{
+			button_login.setText("sssss");
+			app.segundavez = false;
+		}
+		else
+		{
+			edit_user.setText("");
+			edit_pass.setText("");
+		}
+		
 		super.onResume();
 	}
 
-
+	/***
+	 * levantar todos los componentes
+	 */
 	private void levantarXML()
 	{
 		edit_user = (EditText) findViewById(R.id.edit_user);
@@ -64,8 +74,11 @@ public class lay_login extends Activity
 				{
 					Toast.makeText(getApplicationContext(), "Validacion OK", Toast.LENGTH_SHORT).show();
 					Intent intento = new Intent(lay_login.this, lay_login_correcto.class);
+					intento.putExtra(app.clave_nombre, edit_user.getText().toString());
+					intento.putExtra("edad", 20);
 					intento.putExtra("nombre", edit_user.getText().toString());
 					startActivity(intento);
+					app.segundavez = true;
 				}
 				else
 				// sino
@@ -80,6 +93,9 @@ public class lay_login extends Activity
 
 	private String validarDatos()
 	{
+		String aux = getResources().getString(R.string.app_name);
+
+		
 		if (edit_pass.getText().toString().length() == 0)
 		{
 			return "Pass vacio";
@@ -93,6 +109,7 @@ public class lay_login extends Activity
 			return "Contraseña incorrecta";
 		}
 		return "";
+		
 	}
 
 	@Override
@@ -121,6 +138,13 @@ public class lay_login extends Activity
 	{
 		Log.d(TAG, "onStop - lay_login");
 		super.onStop();
+	}
+	
+	@Override
+	protected void onStart()
+	{
+		Log.d(TAG, "onStart - lay_login");
+		super.onStart();
 	}
 
 	@Override
