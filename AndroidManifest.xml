@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.example.cursoandroidfasta.bd.lay_libros"
+            android:name="com.example.cursoandroidfasta.listas.lay_lista"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>

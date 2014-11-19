@@ -55,15 +55,23 @@ public class DAO_Libros extends SQLiteOpenHelper
 		 		+ "VALUES ("+oLibro.getCantidadHojas()+",'"+oLibro.getNombre()+"','"+oLibro.getAutor()+"'"
 		 		+","+oLibro.getPrecio()+",'"+oLibro.getCodigo()+"'"
 		 		+")");
-//		 baseDatos.close(); 
+		 baseDatos.close(); 
 	}
 
 	public ArrayList<Libro> recuperarDatos()
 	{
 		 baseDatos = getWritableDatabase(); 
-		 String sql = "SELECT * FROM libros"; 
+		 String sql = "SELECT * FROM libros LIMIT 1"; 
 		 Cursor cursor = baseDatos.rawQuery(sql, null); 
 		 ArrayList<Libro >libros=new ArrayList<Libro>();  
+//		 if (cursor.getCount()==1)
+//		 {
+//			 cursor.moveToFirst();
+//			 cursor.getInt(0);
+//		 }
+//		 
+		 
+		 
 		 while (cursor.moveToNext()) 
 		 { 
 			 Libro oLibro=new Libro(); 

@@ -14,6 +14,7 @@ public class lay_libros extends Activity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		setContentView(R.layout.activity_empty);
+		super.onCreate(savedInstanceState);
 		DAO_Libros dao = new DAO_Libros(lay_libros.this, getString(R.string.librosdb), null, 1);
 		//me traigo los libros
 		Log.d("Curso", "Cantidad de libros:"+dao.recuperarDatos().size());
@@ -44,9 +45,6 @@ public class lay_libros extends Activity
 		for (Libro libro_aux : libros)
 		{
 			Log.d("Curso", "Libro: "+libro_aux.getNombre());
-		}
-		
-		
-		super.onCreate(savedInstanceState);
+		}	
 	}
 }

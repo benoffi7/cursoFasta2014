@@ -22,10 +22,13 @@ public class AdaptadorEquipos extends BaseAdapter
 	private ArrayList<Equipo> equipos;
 	private Context context;
 
-	public AdaptadorEquipos(ArrayList<Equipo> Equipos, Context Context)
+	
+
+	public AdaptadorEquipos(ArrayList<Equipo> equipos, Context context)
 	{
-		this.equipos = Equipos;
-		this.context = Context;
+		super();
+		this.equipos = equipos;
+		this.context = context;
 	}
 
 	@Override
@@ -86,7 +89,15 @@ public class AdaptadorEquipos extends BaseAdapter
 			public void onClick(View v)
 			{
 				Toast.makeText(context, item.getNombre(), Toast.LENGTH_SHORT).show();
-				context.startActivity(new Intent(context, lay_lista.class));
+				Intent intento = new Intent(context, lay_lista.class);
+				intento.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				context.startActivity(intento);
+				/*android.util.AndroidRuntimeException: 
+				Calling startActivity() from outside of an Activity  
+				context requires the FLAG_ACTIVITY_NEW_TASK flag. 
+				Is this really what you want?*/
+
+				
 			}
 		});
 		return convertView;
