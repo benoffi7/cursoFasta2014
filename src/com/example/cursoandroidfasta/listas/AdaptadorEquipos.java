@@ -22,13 +22,11 @@ public class AdaptadorEquipos extends BaseAdapter
 	private ArrayList<Equipo> equipos;
 	private Context context;
 
-	
-
-	public AdaptadorEquipos(ArrayList<Equipo> equipos, Context context)
+	public AdaptadorEquipos(ArrayList<Equipo> equipos, Context Context)
 	{
 		super();
 		this.equipos = equipos;
-		this.context = context;
+		this.context = Context;
 	}
 
 	@Override
@@ -49,7 +47,7 @@ public class AdaptadorEquipos extends BaseAdapter
 		return 0;
 	}
 
-	static class ViewHolder
+	 class ViewHolder
 	{
 		TextView text_equipo;
 		TextView text_puntos;
@@ -60,8 +58,8 @@ public class AdaptadorEquipos extends BaseAdapter
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
-		 final Equipo item = getItem(position);
-		 ViewHolder holder;
+		final Equipo item = getItem(position);
+		 final ViewHolder holder;
 		if (convertView == null)//es la primera vez
 		{
 			Log.d("Curso","esta es la primera vez del elemento "+item.getNombre());
@@ -78,7 +76,7 @@ public class AdaptadorEquipos extends BaseAdapter
 		{
 			Log.d("Curso","esta es la primera vez del elemento "+item.getNombre());
 			holder = (ViewHolder) convertView.getTag();
-		}
+		}		
 		
 		holder.text_equipo.setText(item.getNombre());
 		holder.text_puntos.setText("Puntos: "+item.getPuntos());
@@ -91,13 +89,13 @@ public class AdaptadorEquipos extends BaseAdapter
 				Toast.makeText(context, item.getNombre(), Toast.LENGTH_SHORT).show();
 				Intent intento = new Intent(context, lay_lista.class);
 				intento.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				context.startActivity(intento);
+				
+				//context.startActivity(intento);
 				/*android.util.AndroidRuntimeException: 
 				Calling startActivity() from outside of an Activity  
 				context requires the FLAG_ACTIVITY_NEW_TASK flag. 
 				Is this really what you want?*/
-
-				
+				holder.text_equipo.setText("dddd");
 			}
 		});
 		return convertView;
