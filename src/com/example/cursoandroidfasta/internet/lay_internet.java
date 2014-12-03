@@ -26,7 +26,7 @@ public class lay_internet extends Activity
 		new descargarCaminatas().execute();
 		
 		else
-			Toast.makeText(getApplicationContext(), "Sin internet", Toast.LENGTH_SHORT).show();
+			Toast.makeText(lay_internet.this, "Sin internet", Toast.LENGTH_SHORT).show();
 
 		super.onCreate(savedInstanceState);
 	}

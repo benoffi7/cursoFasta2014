@@ -39,8 +39,7 @@ public class getCaminatas
 			// in milliseconds which is the timeout for waiting for data.
 			int timeoutSocket = 5000;
 			HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
-			
-			
+		
 			
 			StringBuilder builder = new StringBuilder();
 			HttpClient client = new DefaultHttpClient(httpParameters);
@@ -100,6 +99,8 @@ public class getCaminatas
 						oCaminata.setNombrePT(objectoResponse.getJSONObject(i).getString("nombrePT").replace("'", "#"));
 
 						JSONObject jsonDificultad = jsonCaminata.getJSONObject("dificultad");
+						
+						jsonCaminata.get("icono");
 						
 
 						oCaminata.setDificultad_descripcionEN(jsonDificultad.getString("descripcionEN").replace("'", "#"));
